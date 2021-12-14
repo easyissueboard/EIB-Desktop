@@ -4,6 +4,18 @@ import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
+<<<<<<< HEAD
+=======
+
+  @override
+  _MainScreenState createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  @override
+class Team extends StatelessWidget {
+  const Team({Key? key}) : super(key: key);
+>>>>>>> main
 
   @override
   _MainScreenState createState() => _MainScreenState();
@@ -20,7 +32,10 @@ class _MainScreenState extends State<MainScreen> {
               Tabbar(),
               Issue(),
             ],
+<<<<<<< HEAD
           ),
+=======
+>>>>>>> main
         ],
       ),
     );
