@@ -8,10 +8,15 @@ class MovePage extends StatefulWidget {
 }
 
 class _MovePageState extends State<MovePage> {
-  String TeamButtonState = 'Team';
-  String IssueBoardButtonState = 'IssueBoard';
-  String UserButtonState = 'User';
-  var _color = Colors.grey;
+  String TeamButtonState = 'TEAM';
+  String IssueBoardButtonState = 'ISSUEBOARD';
+  String UserButtonState = 'USER';
+  var Teamcolor = Colors.grey;
+  var TeamcheckColor = Colors.grey;
+  var IssueBoardcolor = Colors.grey;
+  var IssueBoardcheckColor = Colors.grey;
+  var Usercolor = Colors.grey;
+  var UsercheckColor = Colors.grey;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -22,28 +27,76 @@ class _MovePageState extends State<MovePage> {
             color: Colors.grey,
             child: Column(
               children: [
-                SizedBox(
-                  height: 200,
+                Row(
+                  children: [
+                    Container(
+                      width: 5,
+                      height: 50,
+                      color: TeamcheckColor,
+                    ),
+                    Container(
+                        color: Teamcolor,
+                        width: 245,
+                        height: 50,
+                        child: TextButton.icon(
+                            onPressed: ChangeStateTeam,
+                            icon: Icon(
+                              Icons.people,
+                              color: Colors.black,
+                            ),
+                            label: Text(
+                              '$TeamButtonState',
+                              style:
+                                  TextStyle(fontSize: 18, color: Colors.black),
+                            ))),
+                  ],
                 ),
                 Row(
                   children: [
                     Container(
                       width: 5,
                       height: 50,
-                      color: Colors.lightBlue,
+                      color: IssueBoardcheckColor,
                     ),
                     Container(
-                      width: 245,
+                        color: IssueBoardcolor,
+                        width: 245,
+                        height: 50,
+                        child: TextButton.icon(
+                            onPressed: ChangeStateIssueBoard,
+                            icon: Icon(
+                              Icons.question_answer,
+                              color: Colors.black,
+                            ),
+                            label: Text(
+                              '$IssueBoardButtonState',
+                              style:
+                                  TextStyle(fontSize: 18, color: Colors.black),
+                            ))),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Container(
+                      width: 5,
                       height: 50,
-                      child: RaisedButton(
-                        child: Text(
-                          '$TeamButtonState',
-                          style: TextStyle(fontSize: 18),
-                        ),
-                        onPressed: ChangeTextTeam,
-                        color: _color,
-                      ),
-                    )
+                      color: UsercheckColor,
+                    ),
+                    Container(
+                        color: Usercolor,
+                        width: 245,
+                        height: 50,
+                        child: TextButton.icon(
+                            onPressed: ChangeStateUser,
+                            icon: Icon(
+                              Icons.people,
+                              color: Colors.black,
+                            ),
+                            label: Text(
+                              '$UserButtonState',
+                              style:
+                                  TextStyle(fontSize: 18, color: Colors.black),
+                            ))),
                   ],
                 ),
               ],
@@ -52,14 +105,62 @@ class _MovePageState extends State<MovePage> {
     );
   }
 
-  void ChangeTextTeam() {
+  void ChangeStateTeam() {
     setState(() {
-      if (TeamButtonState == 'Team') {
-        TeamButtonState = 'TEAM';
-        _color = Colors.green;
+      if (TeamcheckColor == Colors.lightBlue) {
+        Teamcolor = Colors.grey;
+        TeamcheckColor = Colors.grey;
       } else {
-        TeamButtonState = 'Team';
-        _color = Colors.grey;
+        Teamcolor = Colors.amber;
+        TeamcheckColor = Colors.lightBlue;
+        if (IssueBoardcheckColor == Colors.lightBlue) {
+          IssueBoardcheckColor = Colors.grey;
+          IssueBoardcolor = Colors.grey;
+        }
+        if (UsercheckColor == Colors.lightBlue) {
+          UsercheckColor = Colors.grey;
+          Usercolor = Colors.grey;
+        }
+      }
+    });
+  }
+
+  void ChangeStateIssueBoard() {
+    setState(() {
+      if (IssueBoardcheckColor == Colors.lightBlue) {
+        IssueBoardcolor = Colors.grey;
+        IssueBoardcheckColor = Colors.grey;
+      } else {
+        IssueBoardcolor = Colors.amber;
+        IssueBoardcheckColor = Colors.lightBlue;
+        if (UsercheckColor == Colors.lightBlue) {
+          UsercheckColor = Colors.grey;
+          Usercolor = Colors.grey;
+        }
+        if (TeamcheckColor == Colors.lightBlue) {
+          TeamcheckColor = Colors.grey;
+          Teamcolor = Colors.grey;
+        }
+      }
+    });
+  }
+
+  void ChangeStateUser() {
+    setState(() {
+      if (UsercheckColor == Colors.lightBlue) {
+        Usercolor = Colors.grey;
+        UsercheckColor = Colors.grey;
+      } else {
+        Usercolor = Colors.amber;
+        UsercheckColor = Colors.lightBlue;
+        if (TeamcheckColor == Colors.lightBlue) {
+          TeamcheckColor = Colors.grey;
+          Teamcolor = Colors.grey;
+        }
+        if (IssueBoardcheckColor == Colors.lightBlue) {
+          IssueBoardcheckColor = Colors.grey;
+          IssueBoardcolor = Colors.grey;
+        }
       }
     });
   }
