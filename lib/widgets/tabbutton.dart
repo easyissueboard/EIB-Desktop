@@ -8,7 +8,6 @@ class MovePage extends StatefulWidget {
 }
 
 class _MovePageState extends State<MovePage> {
-<<<<<<< HEAD
   String TeamButtonState = 'TEAM';
   String IssueBoardButtonState = 'ISSUEBOARD';
   String UserButtonState = 'USER';
@@ -18,9 +17,7 @@ class _MovePageState extends State<MovePage> {
   var IssueBoardcheckColor = Colors.grey;
   var Usercolor = Colors.grey;
   var UsercheckColor = Colors.grey;
-=======
 
->>>>>>> main
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -31,7 +28,6 @@ class _MovePageState extends State<MovePage> {
             color: Colors.grey,
             child: Column(
               children: [
-<<<<<<< HEAD
                 Row(
                   children: [
                     Container(
@@ -55,15 +51,12 @@ class _MovePageState extends State<MovePage> {
                                   TextStyle(fontSize: 18, color: Colors.black),
                             ))),
                   ],
-=======
->>>>>>> main
                 ),
                 Row(
                   children: [
                     Container(
                       width: 5,
                       height: 50,
-<<<<<<< HEAD
                       color: IssueBoardcheckColor,
                     ),
                     Container(
@@ -105,8 +98,6 @@ class _MovePageState extends State<MovePage> {
                               style:
                                   TextStyle(fontSize: 18, color: Colors.black),
                             ))),
-=======
->>>>>>> main
                   ],
                 ),
               ],
@@ -115,7 +106,6 @@ class _MovePageState extends State<MovePage> {
     );
   }
 
-<<<<<<< HEAD
   void ChangeStateTeam() {
     setState(() {
       if (TeamcheckColor == Colors.lightBlue) {
@@ -172,8 +162,6 @@ class _MovePageState extends State<MovePage> {
           IssueBoardcheckColor = Colors.grey;
           IssueBoardcolor = Colors.grey;
         }
-=======
->>>>>>> main
       }
     });
   }
