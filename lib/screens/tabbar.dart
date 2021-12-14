@@ -9,10 +9,17 @@ class Tabbar extends StatefulWidget {
 }
 
 class _TabbarState extends State<Tabbar> {
+  @override
   Widget build(BuildContext context) {
     return Container(
       width: 250,
       height: 680,
+      color: Colors.grey,
+      child: Column(
+        children: [
+          MovePage(),
+        ],
+      ),
     );
   }
 }

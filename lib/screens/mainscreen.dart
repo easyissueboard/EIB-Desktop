@@ -11,10 +11,6 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   @override
-class Team extends StatelessWidget {
-  const Team({Key? key}) : super(key: key);
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
@@ -24,6 +20,7 @@ class Team extends StatelessWidget {
               Tabbar(),
               Issue(),
             ],
+          ),
         ],
       ),
     );
