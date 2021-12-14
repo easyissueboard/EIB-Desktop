@@ -13,10 +13,22 @@ class _TabbarState extends State<Tabbar> {
   Widget build(BuildContext context) {
     return Container(
       width: 250,
-      height: 680,
+      height: 800,
       color: Colors.grey,
       child: Column(
         children: [
+          SizedBox(
+            height: 96,
+          ),
+          Image(
+            image: NetworkImage(
+                'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
+            width: 50,
+            height: 50,
+          ),
+          SizedBox(
+            height: 72,
+          ),
           MovePage(),
         ],
       ),
