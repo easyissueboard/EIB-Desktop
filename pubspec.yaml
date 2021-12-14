@@ -37,8 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   desktop_window: ^0.4.0
   bitsdojo_window: ^0.1.1+1
-  flutter_acrylic: ^0.1.0
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

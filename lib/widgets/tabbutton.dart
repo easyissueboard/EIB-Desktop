@@ -8,10 +8,7 @@ class MovePage extends StatefulWidget {
 }
 
 class _MovePageState extends State<MovePage> {
-  String TeamButtonState = 'Team';
-  String IssueBoardButtonState = 'IssueBoard';
-  String UserButtonState = 'User';
-  var _color = Colors.grey;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -22,28 +19,12 @@ class _MovePageState extends State<MovePage> {
             color: Colors.grey,
             child: Column(
               children: [
-                SizedBox(
-                  height: 200,
                 ),
                 Row(
                   children: [
                     Container(
                       width: 5,
                       height: 50,
-                      color: Colors.lightBlue,
-                    ),
-                    Container(
-                      width: 245,
-                      height: 50,
-                      child: RaisedButton(
-                        child: Text(
-                          '$TeamButtonState',
-                          style: TextStyle(fontSize: 18),
-                        ),
-                        onPressed: ChangeTextTeam,
-                        color: _color,
-                      ),
-                    )
                   ],
                 ),
               ],
@@ -52,14 +33,6 @@ class _MovePageState extends State<MovePage> {
     );
   }
 
-  void ChangeTextTeam() {
-    setState(() {
-      if (TeamButtonState == 'Team') {
-        TeamButtonState = 'TEAM';
-        _color = Colors.green;
-      } else {
-        TeamButtonState = 'Team';
-        _color = Colors.grey;
       }
     });
   }
